@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #333333;
+            line-height: 1.5;
+            font-size: 11pt;
+        }
+        h2 {
+            color: #1A365D;
+            border-bottom: 2px solid #3182CE;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+        .file-name {
+            font-weight: bold;
+            color: #2C5282;
+            background-color: #EBF8FF;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #1A202C;
+            color: #AEF1F9;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 10pt;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Código Fuente: Estilos Visuales</h2>
+    <div class="file-name">style.css</div>
+    <pre>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h2 {
+    color: #1a365d;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3182ce;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2b6cb0;
+}
+
+#mensajeExito {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #c6f6d5;
+    color: #22543d;
+    border-left: 4px solid #38a169;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+    </pre>
+
+    <h2>Código Fuente: Funciones e Interactividad</h2>
+    <div class="file-name">script.js</div>
+    <pre>
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const mensaje = document.getElementById('mensaje').value;
+    
+    if (email.includes('@')) {
+        console.log('Formulario recibido con éxito.');
+        console.log('Nombre:', nombre);
+        console.log('Email:', email);
+        console.log('Mensaje:', mensaje);
+        
+        const exitoDiv = document.getElementById('mensajeExito');
+        exitoDiv.classList.remove('hidden');
+        
+        document.getElementById('contactForm').reset();
+        
+        setTimeout(() => {
+            exitoDiv.classList.add('hidden');
+        }, 5000);
+    }
+});
+    </pre>
+
+</body>
+</html>
